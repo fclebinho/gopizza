@@ -5,7 +5,8 @@ import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { ThemeProvider } from "styled-components/native";
 
-import { SignInScreen } from "@/screens";
+import { AuthProvider } from "@/hooks";
+import { Routes } from "@/routes";
 import theme from "@/theme";
 
 export default function App() {
@@ -21,7 +22,9 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <StatusBar style="light" translucent backgroundColor="transparent" />
-      <SignInScreen />
+      <AuthProvider>
+        <Routes />
+      </AuthProvider>
     </ThemeProvider>
   );
 }

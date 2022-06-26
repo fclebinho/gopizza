@@ -9,12 +9,7 @@ type Props = RectButtonProps & {
   loading?: boolean;
 };
 
-const Button = ({
-  title,
-  type = "primary",
-  loading = false,
-  ...rest
-}: Props) => {
+const Button = ({ title, type = "primary", loading = false, ...rest }: Props) => {
   return (
     <Container type={type} enabled={!loading} {...rest}>
       {loading ? <Loader /> : <Title>{title}</Title>}
